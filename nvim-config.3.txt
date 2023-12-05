@@ -52,7 +52,7 @@ Navigate to init.lua and add the following line:
 
 ```require("kwalikum.packer")```
 
-Save the file and create a config file for the telescope plugin:
+Save the file and quit neovim.  
 
 ```space w```
 ```:Ex```
@@ -86,7 +86,6 @@ require("telescope").setup {
   },
 }
 local builtin = require('telescope.builtin')
-require('telescope').load_extension('file_browser')
 
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
 vim.keymap.set('n', '<leader>pg', builtin.git_files, {})
@@ -107,10 +106,19 @@ Save the file and source it and quit
 
 ## TESTING PACKER AND TELESCOPE PLUGIN
 
+Navigate to ~/.config/nvim and open neovim
+
+```cd ~/.config/nvim```
+```neovim```
+
 Test telescope by pressing <leader>pf, if everything is working right
 you should see a list of files in your ~/.config/nvim directory. 
 
+This is because you opened neovim within the ~/.config/nvim directory.
+
 If you type in "init..." it should start to show you your 2 init.lua files.
+You can search for any file within the ~/.config/nvim directory, when you 
+have the file you would like to open selected, press enter to open it.
 
 You can cycle between the options with Control + p and n keys.
 
