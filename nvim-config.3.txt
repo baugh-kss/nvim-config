@@ -114,18 +114,11 @@ If you type in "init..." it should start to show you your 2 init.lua files.
 
 You can cycle between the options with Control + p and n keys.
 
+Congratulations! You've successfully installed Packer, integrated 
+Telescope.nvim into your Neovim setup and customized it with your own
+configuration.  Most plugins for neovim work exactly the same way, so you 
+basically learned how to install any plug in for neovim. In the next tutorial, 
+we'll explore more advanced configurations and plugins to supercharge your 
+coding experience. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Until then, happy coding!
