@@ -76,3 +76,6 @@ vim.o.hidden = true                     -- Allow hidden buffers
 vim.o.showcmd = true                    -- Show partial command in status line
 vim.o.laststatus = 2                    -- Always show status line
 vim.o.scrolloff = 8                     -- Minimal number of screen lines to keep above and below the cursor
+
+Take some time to explore the above options and set things up in way that is functional for you
+I would highly recommend changing the tabstop, setting your clipboard to unnamedplus, and setting line numbers.
