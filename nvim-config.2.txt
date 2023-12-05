@@ -1,0 +1,172 @@
+## RECAP
+
+Congradulations on your work so far, you have successfully installed and made some
+basic changes to your neovim configuration.  From here on out it doesn't get a
+whole lot more complicated, but the applications(neovim) usability will increase
+big time from here on out.  
+
+## NEXT STEPS
+
+The following tutorial will walk you through setting up your neovim configuration
+to make it more modular and easier to work with.  We'll add a few keyboard bindings
+to make navigation quicker and easier and a plug in or two to increase the power
+of neovim.
+
+## MODULAR LUA CONFIGURATION
+
+At this point your neovim configuration structure should look like this:
+
+```~/.config/nvim/```
+
+```~/.config/nvim/init.lua```
+
+And your init.lua should look like this:
+
+```
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.wrap = false
+vim.o.showmode = false
+
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+vim.o.smartindent = true
+
+vim.o.clipboard = "unnamedplus"
+```
+
+When you are done, your init.lua should look like this:
+
+```
+require('plugin_directory')
+```
+
+...and you will have a directory structure like this:
+
+```~/.config/nvim/```
+
+```~/.config/nvim/init.lua```
+
+```~/.config/nvim/plugin_directory/```
+
+```~/.config/nvim/plugin_directory/init.lua```
+
+```~/.config/nvim/after/plugin/```
+
+This may look a little more complex, but it is actually quite simple and will make it
+easier to make changes later on.
+
+## CREATING A MODULAR LUA CONFIGURATION
+*NOTE:  You can switch "kwalikum" with any other school appropriate name you want.
+
+Start by creating the new directories and files you will need.
+
+```cd ~/.config/nvim```
+```mkdir -p lua/kwalikum```
+```touch lua/kwalikum/init.lua```
+
+After we will need to add the following lines to our init.lua file:
+
+```nvim init.lua```
+```require("kwalikum")```
+
+This will make sure that neovim has access to our lua directory where will add
+our plugins and other custom configuration.
+
+
+Then add the following lines to a new file called "config.lua":
+
+```cd ~/.config/nvim```
+```nvim kwalikum/config.lua```
+
+```
+vim.g.mapleader = " "
+
+vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>so", ":so<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>q", ":q<CR>", { noremap = true })
+```
+
+You have successfully setup your space bar as a leader key and created a few
+shortcuts.  The first one will save your file, the second one will reload your
+config file, and the last one will quit neovim.
+
+We need to tell our init.lua file that our config.lua file is a plugin.  We will
+need to add the following line to our init.lua file:
+
+```nvim init.lua```
+```require("kwalikum.config")```
+
+Make sure you replace "kwalikum" with the name of your plugin directory.
+
+Then save the file and source it.
+
+```:w```
+```:so```
+
+Then test a shortcut to make sure your config file is loaded and working
+
+```Press Space Bar > q```
+
+It should quit neovim.
+
+## FINISHING TOUCHES
+
+We'll finish off this tutorial by moving the config from our init.lua file to
+a new file called "config.lua".
+
+Start by opening your init.lua file in your ~/.config/nvim/init.lua
+
+```nvim init.lua```
+
+Using your j and k keys move the line that reads:
+
+```vim.o.number = true```
+
+Look at the line number next to the last line of your configuration
+*Remember this number, plus one.  I'll use the example of 7 lines below
+so, 7+1 = 8...
+
+Then press
+
+```
+8dd
+```
+
+This should "cut" thoses lines...Let's move to the config.lua file and "put"
+them in.
+
+Bring up the file explorer "netrw"
+
+```
+:Ex
+```
+
+Browse to your lua/kwalikum directory and open config.lua
+
+Move to the top line
+
+```gg```
+
+"put" in the config.lua file
+
+```p```
+
+This should "paste" the lines from the init.lua file into the config.lua file
+
+Save and source your config file
+
+```space w```
+```space so```
+
+Congradulations!  You have created a modular neovim configuration and are ready
+to move on to adding a package manager and custom plugins.  Feel free to add 
+your own customization, it should work well for you and your needs.  You
+can create any custom keyboard shortcut you want and more, try your google Fu
+for other useful shortcuts.  I personally always remap "kj" and "jk" to "<Esc>"
+so I can mash the 2 keys together instead of reaching for the escape key.
+
+
+
+
