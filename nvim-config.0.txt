@@ -72,13 +72,15 @@ an "init.lua" file in their home directory(/home/.config/nvim/init.lua).
 
     7.  Once you are in, press the "i" key to enter insert mode and type the following:
 
-            echo "Welcome to neovim!"
+            print("Welcome to neovim!")
+            vim.opt.number = true
 
     8.  Save your changes and exit
             Press the "Esc" key to exit insert mode and return to normal mode
             type ":wq" to save and exit
 
-    9.  Check your progress opening neovim, if you are successful you should see your welcome message
+    9.  Check your progress opening neovim, if you are successful you should see
+        a number "1" on the line at the top of the screen.
 
 ## TO SUBMIT
 

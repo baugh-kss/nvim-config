@@ -14,11 +14,13 @@ we will be able to control everything from key-mappings, appearance, and even mo
 
 Open up your init.lua file that you created in the previous step(nvim ~/.config/nvim/init.lua).
 
-Start by adding the follwing lines to your configuration file:
+Start by adding the follwing lines to your configuration file
+Right below the line that reads:
+
+```vim.opt.number = true```
 
 ---
 
-vim.o.number = true
 vim.o.relativenumber = true
 vim.o.wrap = false
 vim.o.showmode = false
@@ -46,36 +48,42 @@ vim.cmd[[syntax enable]]                -- Enable syntax highlighting
 vim.cmd[[filetype plugin indent on]]    -- Enable file type detection, plugins, and indentation
 
 -- Appearance
-vim.o.number = true                     -- Display line numbers
-vim.o.relativenumber = true             -- Show relative line numbers
-vim.o.wrap = false                      -- Disable line wrapping
-vim.o.showmode = false                  -- Hide the mode indicator
+vim.opt.number = true                     -- Display line numbers
+vim.opt.relativenumber = true             -- Show relative line numbers
+vim.opt.wrap = false                      -- Disable line wrapping
+vim.opt.showmode = false                  -- Hide the mode indicator
 
 -- Indentation and Formatting
-vim.o.tabstop = 4                       -- Number of spaces a tab counts for
-vim.o.shiftwidth = 4                    -- Number of spaces to use for each step of autoindent
-vim.o.expandtab = true                   -- Use spaces instead of tabs
-vim.o.smartindent = true                 -- Enable smart indenting
+vim.opt.tabstop = 4                       -- Number of spaces a tab counts for
+vim.opt.shiftwidth = 4                    -- Number of spaces to use for each step of autoindent
+vim.opt.expandtab = true                   -- Use spaces instead of tabs
+vim.opt.smartindent = true                 -- Enable smart indenting
 
 -- Search and Highlight
-vim.o.incsearch = true                  -- Enable incremental search
-vim.o.hlsearch = true                   -- Highlight search results
-vim.o.ignorecase = true                 -- Case-insensitive search
-vim.o.smartcase = true                  -- Case-sensitive if search pattern has uppercase characters
+vim.opt.incsearch = true                  -- Enable incremental search
+vim.opt.hlsearch = true                   -- Highlight search results
+vim.opt.ignorecase = true                 -- Case-insensitive search
+vim.opt.smartcase = true                  -- Case-sensitive if search pattern has uppercase characters
 
 -- Mouse and Clipboard
-vim.o.mouse = "a"                       -- Enable mouse support
-vim.o.clipboard = "unnamedplus"         -- Use system clipboard
+vim.opt.mouse = "a"                       -- Enable mouse support
+vim.opt.clipboard = "unnamedplus"         -- Use system clipboard
 
 -- Backup and Swap Files
-vim.o.backup = false                    -- Disable backup files
-vim.o.swapfile = false                  -- Disable swap files
+vim.opt.backup = false                    -- Disable backup files
+vim.opt.swapfile = false                  -- Disable swap files
 
 -- Miscellaneous
-vim.o.hidden = true                     -- Allow hidden buffers
-vim.o.showcmd = true                    -- Show partial command in status line
-vim.o.laststatus = 2                    -- Always show status line
-vim.o.scrolloff = 8                     -- Minimal number of screen lines to keep above and below the cursor
+vim.opt.hidden = true                     -- Allow hidden buffers
+vim.opt.showcmd = true                    -- Show partial command in status line
+vim.opt.laststatus = 2                    -- Always show status line
+vim.opt.scrolloff = 8                     -- Minimal number of screen lines to keep above and below the cursor
+vim.opt.cursorline = true                 -- Highlight the screen line of the cursor
 
 Take some time to explore the above options and set things up in way that is functional for you
-I would highly recommend changing the tabstop, setting your clipboard to unnamedplus, and setting line numbers.
+I would highly recommend at least changing your tabstop, setting your clipboard to unnamedplus, 
+and setting line numbers.
+
+In the next tutorial you will be adding some keyboard shortcuts to make navigation easier.
+After that we will get to installing custom plugins to extend the capabilities of neovim, 
+and changing the appearance with a theme, that will add a lot more color to your experience.
