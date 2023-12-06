@@ -174,8 +174,8 @@ This should "paste" the lines from the init.lua file into the config.lua file
 
 Save and source your config file
 
-```space w```
-```space so```
+```leader + w```
+```leader + so```
 
 Congradulations!  You have created a modular neovim configuration and even learned
 to use the netrw file explorer.  You are now ready to move on to adding a package 
