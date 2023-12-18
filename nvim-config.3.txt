@@ -45,7 +45,7 @@ vim.cmd [[packadd packer.nvim]]
 
 Save the file and add it to your init.lua:
 
-```space w```
+```<leader> w```
 ```:Ex```
 
 Navigate to init.lua and add the following line:
@@ -54,7 +54,7 @@ Navigate to init.lua and add the following line:
 
 Save the file and quit neovim.  
 
-```space w```
+```<leader> w```
 ```:Ex```
 
 Start by opening neovim and it should show some indication that packer is 
@@ -100,9 +100,9 @@ This will setup some shortcuts and configure the look of the plugin.
 
 Save the file and source it and quit
 
-```space w```
-```space so```
-```space q```
+```<leader> w```
+```<leader> so```
+```<leader> q```
 
 ## TESTING PACKER AND TELESCOPE PLUGIN
 
